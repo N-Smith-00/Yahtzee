@@ -36,6 +36,7 @@ def game():
             print('Invalid input. Try again.')
             time.sleep(0.5)
     game = Game(int(num_players))
+    game._print_dice(game.roll_dice(5))
     
 
 def rules():

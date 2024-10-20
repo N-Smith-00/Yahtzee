@@ -21,6 +21,7 @@ class GameCard:
         self.lower_sec = (self.three_kind, self.four_kind, self.full_house, self.sm_strt, self.lg_strt, self.yahtzee, self.chance)
 
         self.grand_total = 0
+        self.filled = 0
     
     def _sum_upper(self) -> int:
         """calculates the total of the upper section
