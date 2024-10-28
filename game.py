@@ -59,10 +59,9 @@ class Game:
             if roll_i < 3:
                 # check if player wants to keep any dice
                 
-                'TODO: loop over a copy of list, pop from original'
                 nums = [int(n) for n in input("Which dice do you want to keep? \n(enter the numbers separated by spaces)\n").split()]
                 i = 0
-                for num in nums.copy():
+                for num in nums:
                     kept_dice.append(rolls.pop(num-(1+i)))
                     dice_to_roll -= 1
                     i += 1
