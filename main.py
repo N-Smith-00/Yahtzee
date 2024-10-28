@@ -7,12 +7,12 @@ def main():
 
 def menu():
     # main menu
-    print(f'{'----- Yahtzee -----':^26}')
+    print(f'{"----- Yahtzee -----":^26}')
     while True:
-        print(f'{'----- Main Menu -----':^26}')
-        print(f'{'1. Play Game':<26}')
-        print(f'{'2. Rules':<26}')
-        print(f'{'3. Quit':<26}')
+        print(f'{"----- Main Menu -----":^26}')
+        print(f'{"1. Play Game":<26}')
+        print(f'{"2. Rules":<26}')
+        print(f'{"3. Quit":<26}')
         choice = input('Enter choice: ')
         match choice:
             case '1':
@@ -24,8 +24,6 @@ def menu():
                 exit()
             case _:
                 print('\nInvalid choice. Try again.')
-                time.sleep(1)
-
 def game():
     # play game
     while True:
@@ -34,13 +32,17 @@ def game():
             break
         else:
             print('Invalid input. Try again.')
-            time.sleep(0.5)
     game = Game(int(num_players))
-    game._print_dice(game.roll_dice(5))
+    
+    playing = True
+    while playing:
+        for player in game.players_in:
+            game.take_turn(player)
     
 
 def rules():
     # display rules
     pass
 
-main()
+if __name__ == "__main__":
+    main()
